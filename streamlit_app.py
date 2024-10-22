@@ -79,6 +79,8 @@ mode='lines',
 name='Train',
 line=dict(color='blue', width=2),))
 
+st.plotly_chart(fig)
+
 
 
 
