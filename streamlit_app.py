@@ -21,7 +21,7 @@ df['close'] = df['close'].interpolate()
 
 # y2 = y
 full_date_range = pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='D')
-df_full = df.reindex(full_date_range)
+df_full = df.reindex(full_date_range,method='ffill')
 y_full = df_full['close'].fillna(method='ffill')
 
 y_ts = TimeSeries.from_series(y_full, fill_missing_dates=True, freq="D")
