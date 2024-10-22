@@ -72,46 +72,12 @@ st.markdown(f"<p style='color: white; font-size: 18px;'>RMSE: {rmse_theta:.5f}</
 
 
 fig = go.Figure()
-
-# Train data
 fig.add_trace(go.Scatter(
 x=train_ts.time_index,
 y=train_ts.values(),
 mode='lines',
 name='Train',
 line=dict(color='blue', width=2),
-))
-
-# Test data
-fig.add_trace(go.Scatter(
-x=test_ts.time_index,
-y=test_ts.values(),
-mode='lines',
-name='Test',
-line=dict(color='orange', width=2),
-))
-
-# Forecast data
-fig.add_trace(go.Scatter(
-x=forecast_values.time_index,
-y=forecast_values.values(),
-mode='lines',
-name='Forecast',
-line=dict(color='green', width=2, dash='dash'),
-))
-
-# Update layout for the figure
-fig.update_layout(
-title='EUR/USD Close Price Forecast using Theta Model',
-xaxis_title='Date',
-yaxis_title='Price',
-legend=dict(x=0, y=1),
-template='plotly_dark',
-hovermode='x unified'
-)
-
-st.subheader("📊 Forecast Results")
-st.plotly_chart(fig)
 
 
 
