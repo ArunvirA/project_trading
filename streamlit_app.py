@@ -79,7 +79,7 @@ st.markdown(f"<p style='color: white; font-size: 18px;'>RMSE: {rmse_theta:.5f}</
 fig = go.Figure()
 
 fig.add_trace(go.Scatter(
-x=train_ts.time_index,
+x=Date_date,
 y=train_ts.values(),
 mode='lines',
 name='Train',
