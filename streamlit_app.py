@@ -82,9 +82,9 @@ st.markdown(f"<p style='color: white; font-size: 18px;'>RMSE: {rmse_theta:.5f}</
 #     return x, y, z
 
 # x, y, z = get_plotly_data()
-train_line = px.line(x=train_ts.values(),y=full_date_range[:len(train_ts.values())])
-test_line = px.line(x=test_ts.values(),y=full_date_range[-len(test_ts.values()):])
-forecast_line = px.line(x=forecast_values.values(),y=full_date_range[-len(test_ts.values()):])
+train_line = px.line(x=train_ts.values(),y=full_date_range[:len(train_ts.values())+1])
+test_line = px.line(x=test_ts.values(),y=full_date_range[-len(test_ts.values())+1:])
+forecast_line = px.line(x=forecast_values.values(),y=full_date_range[-len(test_ts.values())+1:])
 
 fig = go.Figure(data=[train_line,test_line,forecast_line])
 fig.update_layout(title='EUR/USD predictions', autosize=False, width=800, height=800, margin=dict(l=40, r=40, b=40, t=40))
