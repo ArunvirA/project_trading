@@ -19,7 +19,7 @@ st.dataframe(df.head())
 df = df.sort_values(by='Date_date', ascending=True)
 # df.set_index('Date_date', inplace=True, drop=False)
 df = df[['Date_date', 'open', 'high', 'low', 'close', 'vol']]
-
+df['Date_date'] = df['Date_date'].dt.tz_localize(None)
 
 df['close'] = df['close'].interpolate()
 
