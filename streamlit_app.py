@@ -82,7 +82,7 @@ mode='lines',
 name='Training Data',
 line=dict(color='blue', width=2),
 hoverinfo='text',
-text='Train: ' + train_ts.values().astype(str)
+# text='Train: ' + train_ts.values().astype(str)
 ))
 
 fig.add_trace(go.Scatter(
@@ -92,7 +92,7 @@ mode='lines',
 name='Testing Data',
 line=dict(color='orange', width=2),
 hoverinfo='text',
-text='Test: ' + test_ts.values().astype(str)
+# text='Test: ' + test_ts.values().astype(str)
 ))
 
 fig.add_trace(go.Scatter(
@@ -102,7 +102,7 @@ mode='lines',
 name='Forecast',
 line=dict(color='green', width=2, dash='dash'),
 hoverinfo='text',
-text='Forecast: ' + forecast_values.values().astype(str)
+# text='Forecast: ' + forecast_values.values().astype(str)
 ))
 
 # Update layout for better presentation
