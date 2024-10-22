@@ -81,8 +81,6 @@ def get_plotly_data():
     x, y = np.linspace(0, 1, sh_0), np.linspace(0, 1, sh_1)
     return x, y, z
 
-import plotly.graph_objects as go
-
 x, y, z = get_plotly_data()
 
 fig = go.Figure(data=[go.Surface(z=z, x=x, y=y)])
