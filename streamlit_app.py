@@ -31,8 +31,6 @@ theta = Theta()
 theta.fit(train_ts)
 forecast_values = theta.predict(len(test_ts))
 
-st.dataframe(forecast_values)
-
 st.subheader("Plotting forecast results")
 fig, ax = plt.subplots(figsize=(12, 6))
 train_ts.plot(label='Train', lw=2, ax=ax)
