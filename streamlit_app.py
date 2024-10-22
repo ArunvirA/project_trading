@@ -24,7 +24,7 @@ full_date_range = pd.date_range(start=df['Date_date'].min(), end=df['Date_date']
 df_full = df.reindex(full_date_range)
 y_full = df_full['close'].fillna(method='ffill')
 
-y_ts = TimeSeries.from_series(y_full['close'], fill_missing_dates=True, freq="D")
+y_ts = TimeSeries.from_series(y_full, fill_missing_dates=True, freq="D")
 train_ts, test_ts = y_ts[:int(len(y_ts)*0.8)], y_ts[int(len(y_ts)*0.8):]
 
 st.write(full_date_range)
