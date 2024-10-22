@@ -5,4 +5,7 @@ from darts.models import Theta
 from darts import TimeSeries
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
-st.title("Data Led Trading: Predict, Profit, Prevail")
+st.title('EUR/USD Close Price Forecast using Theta Model')
+st.write("""This app forecasts EUR/USD close prices using the Theta model. You can upload your own dataset as a CSV file for analysis.""")
+
+df = pd.read_csv(uploaded_file)
