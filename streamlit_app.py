@@ -21,7 +21,7 @@ train, test = y[:int(len(y)*0.8)], y[int(len(y)*0.8):]
 
 y2 = y
 full_date_range = pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='D')
-y_full = pd.DataFrame(y.reindex(full_date_range))
+y_full = y.reindex(full_date_range)
 y_full['close'] = y_full['close'].fillna(method='ffill')
 
 y_ts = TimeSeries.from_series(y_full['close'], fill_missing_dates=True, freq="D")
