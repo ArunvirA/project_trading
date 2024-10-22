@@ -46,9 +46,9 @@ mse_theta = 0.008376373176977219
 rmse_theta = 0.0915225282483893
 
 st.subheader("Model Evaluation:")
-st.markdown(f"<p style='color: blue; font-size: 18px;'>MAE: {mae_theta:.5f}</p>", unsafe_allow_html=True)
-st.markdown(f"<p style='color: orange; font-size: 18px;'>MSE: {mse_theta:.5f}</p>", unsafe_allow_html=True)
-st.markdown(f"<p style='color: green; font-size: 18px;'>RMSE: {rmse_theta:.5f}</p>", unsafe_allow_html=True)
+st.markdown(f"<p style='color: white; font-size: 18px;'>MAE: {mae_theta:.5f}</p>", unsafe_allow_html=True)
+st.markdown(f"<p style='color: white; font-size: 18px;'>MSE: {mse_theta:.5f}</p>", unsafe_allow_html=True)
+st.markdown(f"<p style='color: white; font-size: 18px;'>RMSE: {rmse_theta:.5f}</p>", unsafe_allow_html=True)
 
 
 
