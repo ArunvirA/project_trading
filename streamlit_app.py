@@ -80,6 +80,9 @@ st.markdown(f"<p style='color: white; font-size: 18px;'>RMSE: {rmse_theta:.5f}</
 #     sh_0, sh_1 = z.shape
 #     x, y = np.linspace(0, 1, sh_0), np.linspace(0, 1, sh_1)
 #     return x, y, z
+st.write(train_ts)
+st.write(train_ts.values())
+st.write(len(train_ts.values()))
 
 # x, y, z = get_plotly_data()
 train_line = px.line(x=train_ts.values(),y=full_date_range[:len(train_ts.values())+1])
