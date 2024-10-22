@@ -11,7 +11,6 @@ st.markdown("""This app forecasts EUR/USD close prices using machine learning sp
 df = pd.read_csv('eurusd_24h.csv')
 st.dataframe(df.head())
 
-df = pd.read_csv('eurusd_24h.csv')
 st.write("Column Names:", df.columns)
 
 df['Date_date'] = pd.to_datetime(df['Date_date'])
