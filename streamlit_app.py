@@ -27,7 +27,7 @@ y_full = df_full['close'].fillna(method='ffill')
 y_ts = TimeSeries.from_series(y_full, fill_missing_dates=True, freq="D")
 train_ts, test_ts = y_ts[:int(len(y_ts)*0.8)], y_ts[int(len(y_ts)*0.8):]
 
-st.write(df['close'])
+st.write(df_full['close'])
 st.write(y_full)
 st.write(y_ts)
 
