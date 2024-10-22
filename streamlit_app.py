@@ -27,7 +27,7 @@ y_full['close'] = y_full['close'].fillna(method='ffill')
 y_ts = TimeSeries.from_series(y_full['close'], fill_missing_dates=True, freq="D")
 train_ts, test_ts = y_ts[:int(len(y_ts)*0.8)], y_ts[int(len(y_ts)*0.8):]
 
-st.write(y_full)
+st.write(full_date_range)
 st.write(y_ts)
 
 theta = Theta()
