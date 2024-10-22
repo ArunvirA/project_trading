@@ -85,7 +85,7 @@ st.write(train_ts.values())
 st.write(len(train_ts.values()))
 
 # x, y, z = get_plotly_data()
-train_line = px.line(x=df_full.index[:len(train_ts.values())+1],y=train_ts.values())
+train_line = px.line(x=df_full.index[:len(train_ts.values())],y=train_ts.values())
 test_line = px.line(x=df_full.index[-len(test_ts.values())+1:],y=test_ts.values())
 forecast_line = px.line(x=df_full.index[-len(test_ts.values())+1:],y=forecast_values.values())
 
