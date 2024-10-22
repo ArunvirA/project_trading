@@ -5,59 +5,59 @@ import matplotlib.pyplot as plt
 from darts.models import Theta
 from darts import TimeSeries
 
-# st.title('EUR/USD Close Price Forecast using Theta Model')
-# st.markdown("""This app forecasts EUR/USD close prices using machine learning specifically the Theta model.""")
+st.title('EUR/USD Close Price Forecast using Theta Model')
+st.markdown("""This app forecasts EUR/USD close prices using machine learning specifically the Theta model.""")
 
-# df = pd.read_csv('eurusd_24h.csv')
-# st.dataframe(df.head())
+df = pd.read_csv('eurusd_24h.csv')
+st.dataframe(df.head())
 
 #       df = df.sort_values(by='Date_date', ascending=True)
 #       df.reset_index(inplace=True)
 #       df['Date_date'] = pd.to_datetime(df['Date_date'])
 #       df.set_index('Date_date', inplace=True)
 
-# df = df.sort_values(by='Date_date', ascending=True)
-# df.set_index('Date_date', inplace=True, drop=False)
-# df = df[['Date_date', 'open', 'high', 'low', 'close', 'vol']]
+df = df.sort_values(by='Date_date', ascending=True)
+df.set_index('Date_date', inplace=True, drop=False)
+df = df[['Date_date', 'open', 'high', 'low', 'close', 'vol']]
 
-# df['close'] = df['close'].interpolate()
+df['close'] = df['close'].interpolate()
 
-# train, test = y[:int(len(y)*0.8)], y[int(len(y)*0.8):]
+train, test = y[:int(len(y)*0.8)], y[int(len(y)*0.8):]
 
 # y2 = y
-# full_date_range = pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='D')
-# full_date_range = pd.date_range(start=df.index.min(), end=df.index.max(), freq='D')
-# df_full = df.reindex(full_date_range)
-# df_full['close'] = df_full['close'].fillna(method='ffill')
-# y_full = df_full['close'].fillna(method='ffill')
+full_date_range = pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='D')
+full_date_range = pd.date_range(start=df.index.min(), end=df.index.max(), freq='D')
+df_full = df.reindex(full_date_range)
+df_full['close'] = df_full['close'].fillna(method='ffill')
+y_full = df_full['close'].fillna(method='ffill')
 
-# df_full.reset_index(inplace=True)
-# df_full.rename(columns={'index': 'Date_date'}, inplace=True)
+df_full.reset_index(inplace=True)
+df_full.rename(columns={'index': 'Date_date'}, inplace=True)
 
-# y_ts = TimeSeries.from_series(df_full['close'], fill_missing_dates=True, freq="D")
-# train_ts, test_ts = y_ts[:int(len(y_ts)*0.8)], y_ts[int(len(y_ts)*0.8):]
+y_ts = TimeSeries.from_series(df_full['close'], fill_missing_dates=True, freq="D")
+train_ts, test_ts = y_ts[:int(len(y_ts)*0.8)], y_ts[int(len(y_ts)*0.8):]
 
-# st.write(df.reindex(full_date_range))
-#st.write(df)
-#st.write(y_ts)
-#st.write(y_full)
+st.write(df.reindex(full_date_range))
+st.write(df)
+st.write(y_ts)
+st.write(y_full)
 
-#theta = Theta()
-#theta.fit(train_ts)
-#forecast_values = theta.predict(len(test_ts))
+theta = Theta()
+theta.fit(train_ts)
+forecast_values = theta.predict(len(test_ts))
 
-#st.subheader("Forecast Values")
-#st.write(forecast_values.pd_dataframe())
+st.subheader("Forecast Values")
+st.write(forecast_values.pd_dataframe())
 
-# st.write(forecast_values)
+st.write(forecast_values)
 
-# st.subheader("Plotting forecast results")
-# fig, ax = plt.subplots(figsize=(12, 6))
-# ax.plot(train_ts.values(),label='Train', lw=2)
-# ax.plot(test_ts.values(),label='Test', lw=2)
-# ax.plot(forecast_values.values(),label='Forecast', lw=2)
-# plt.xlabel('Date')
-# plt.title('EUR/USD Close Price Forecast using Theta')
+st.subheader("Plotting forecast results")
+fig, ax = plt.subplots(figsize=(12, 6))
+ax.plot(train_ts.values(),label='Train', lw=2)
+ax.plot(test_ts.values(),label='Test', lw=2)
+ax.plot(forecast_values.values(),label='Forecast', lw=2)
+plt.xlabel('Date')
+plt.title('EUR/USD Close Price Forecast using Theta')
 
 #   st.subheader("Plotting Forecast Results")
 #   fig, ax = plt.subplots(figsize=(12, 6))
@@ -69,61 +69,6 @@ from darts import TimeSeries
 #   plt.legend()
 
 #   st.pyplot(fig)
-
-
-
-
-
-
-# Title for the dashboard
-st.title('EUR/USD Theta Model Forecast Dashboard')
-
-# Sidebar for file upload
-st.sidebar.title("Upload Data")
-uploaded_file = st.sidebar.file_uploader("Upload your CSV file", type="csv")
-
-
-df = pd.read_csv(uploaded_file)
-st.write("Data Overview", df.head())
-
-    # Sorting the data and setting date as index
-df = df.sort_values(by='Date_date', ascending=True)
-df.reset_index('Date_date', inplace=True)
-df['Date_date'] = pd.to_datetime(df['Date_date'])
-df.set_index('Date_date', inplace=True)
-
-    # Select only the 'close' column
-y = df['close']
-
-    # Handling missing values via forward-fill
-full_date_range = pd.date_range(start=y.index.min(), end=y.index.max(), freq='D')
-y_filled = pd.DataFrame(y.reindex(full_date_range))
-y_filled['close'] = y_filled['close'].fillna(method='ffill')
-
-    # Converting to TimeSeries for Darts
-y_ts = TimeSeries.from_series(y_filled['close'], fill_missing_dates=True, freq="D")
-
-    # Train/Test Split
-train_ts, test_ts = y_ts[:int(len(y_ts)*0.8)], y_ts[int(len(y_ts)*0.8):]
-
-    # Run Theta Model
-st.sidebar.subheader("Run Theta Model")
-if st.sidebar.button("Run Model"):
-with st.spinner("Fitting Theta model..."):
-theta_model = Theta()
-theta_model.fit(train_ts)
-
-            # Forecasting
-forecast = theta_model.predict(len(test_ts))
-
-            # Plotting the forecast
-fig, ax = plt.subplots(figsize=(12, 6))
-train_ts.plot(label='Train', lw=2, ax=ax)
-test_ts.plot(label='Test', lw=2, ax=ax)
-forecast.plot(label='Forecast', lw=2, ax=ax)
-plt.xlabel('Date')
-plt.title('EUR/USD Close Price Forecast using Theta')
-st.pyplot(fig)
 
 mae_theta = 0.10251161515453634
 mse_theta = 0.008376373176977219
