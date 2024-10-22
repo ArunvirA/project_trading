@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from darts.models import Theta
 from darts import TimeSeries
-from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 st.title('EUR/USD Close Price Forecast using Theta Model')
 st.markdown("""This app forecasts EUR/USD close prices using machine learning specifically the Theta model.""")
