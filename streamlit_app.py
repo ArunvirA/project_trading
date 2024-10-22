@@ -70,7 +70,7 @@ plt.title('EUR/USD Close Price Forecast using Theta')
 #   plt.title('EUR/USD Close Price Forecast using Theta')
 #   plt.legend()
 
-  st.pyplot(fig)
+st.pyplot(fig)
 
 mae_theta = 0.10251161515453634
 mse_theta = 0.008376373176977219
