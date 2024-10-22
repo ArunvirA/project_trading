@@ -70,9 +70,14 @@ st.markdown(f"<p style='color: white; font-size: 18px;'>MAE: {mae_theta:.5f}</p>
 st.markdown(f"<p style='color: white; font-size: 18px;'>MSE: {mse_theta:.5f}</p>", unsafe_allow_html=True)
 st.markdown(f"<p style='color: white; font-size: 18px;'>RMSE: {rmse_theta:.5f}</p>", unsafe_allow_html=True)
 
+
+
+
+
+
+
 fig = go.Figure()
 
-# Add Train data
 fig.add_trace(go.Scatter(
 x=train_ts.time_index,
 y=train_ts.values(),
