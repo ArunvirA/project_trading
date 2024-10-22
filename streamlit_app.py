@@ -88,7 +88,7 @@ st.write("Data Overview", df.head())
 
     # Sorting the data and setting date as index
 df = df.sort_values(by='Date_date', ascending=True)
-df.reset_index(inplace=True)
+df.reset_index('Date_date', inplace=True)
 df['Date_date'] = pd.to_datetime(df['Date_date'])
 df.set_index('Date_date', inplace=True)
 
