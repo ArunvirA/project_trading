@@ -4,6 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from darts.models import Theta
 from darts import TimeSeries
+import plotly.express as px
+import plotly.graph_objects as go
 
 st.title('EUR/USD Close Price Forecast using Theta Model')
 st.markdown("""This app forecasts EUR/USD close prices using machine learning specifically the Theta model.""")
