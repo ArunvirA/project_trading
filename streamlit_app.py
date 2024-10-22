@@ -71,60 +71,47 @@ st.markdown(f"<p style='color: white; font-size: 18px;'>MSE: {mse_theta:.5f}</p>
 st.markdown(f"<p style='color: white; font-size: 18px;'>RMSE: {rmse_theta:.5f}</p>", unsafe_allow_html=True)
 
 
-# Create an interactive Plotly graph
 fig = go.Figure()
 
-# Add traces for training, testing, and forecast data
+# Train data
 fig.add_trace(go.Scatter(
 x=train_ts.time_index,
 y=train_ts.values(),
 mode='lines',
-name='Training Data',
+name='Train',
 line=dict(color='blue', width=2),
-hoverinfo='text',
-# text='Train: ' + train_ts.values().astype(str)
 ))
 
+# Test data
 fig.add_trace(go.Scatter(
 x=test_ts.time_index,
 y=test_ts.values(),
 mode='lines',
-name='Testing Data',
+name='Test',
 line=dict(color='orange', width=2),
-hoverinfo='text',
-# text='Test: ' + test_ts.values().astype(str)
 ))
 
+# Forecast data
 fig.add_trace(go.Scatter(
 x=forecast_values.time_index,
 y=forecast_values.values(),
 mode='lines',
 name='Forecast',
 line=dict(color='green', width=2, dash='dash'),
-hoverinfo='text',
-# text='Forecast: ' + forecast_values.values().astype(str)
 ))
 
-# Update layout for better presentation
+# Update layout for the figure
 fig.update_layout(
 title='EUR/USD Close Price Forecast using Theta Model',
 xaxis_title='Date',
-yaxis_title='Close Price',
-hovermode='x unified',
+yaxis_title='Price',
+legend=dict(x=0, y=1),
 template='plotly_dark',
-plot_bgcolor='rgba(0,0,0,0)',
-paper_bgcolor='rgba(0,0,0,0)',
-legend=dict(x=0, y=1, traceorder='normal', orientation='h'),
-margin=dict(l=0, r=0, t=50, b=0),
-height=600,
+hovermode='x unified'
 )
 
-# Add a range slider
-fig.update_xaxes(rangeslider_visible=True)
-
-# Display the interactive plot
-st.plotly_chart(fig, use_container_width=True)
-
+st.subheader("📊 Forecast Results")
+st.plotly_chart(fig)
 
 
 
