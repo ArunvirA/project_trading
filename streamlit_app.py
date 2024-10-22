@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from darts.models import Theta
 from darts import TimeSeries
 
-st.title('EUR/USD Close Price Forecast using Theta Model', layout="wide")
+st.title('EUR/USD Close Price Forecast using Theta Model')
 st.markdown("""This app forecasts EUR/USD close prices using machine learning specifically the Theta model.""")
 
 df = pd.read_csv('eurusd_24h.csv')
