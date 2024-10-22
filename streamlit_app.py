@@ -33,9 +33,9 @@ forecast_values = theta.predict(len(test_ts))
 
 st.subheader("Plotting forecast results")
 fig, ax = plt.subplots(figsize=(12, 6))
-plt.plot(x=train_ts.values(),label='Train', lw=2, ax=ax)
-plt.plot(x=test_ts.values(),label='Test', lw=2, ax=ax)
-plt.plot(x=forecast_values.values(),label='Forecast', lw=2, ax=ax)
+plt.plot(train_ts.values(),label='Train', lw=2, ax=ax)
+plt.plot(test_ts.values(),label='Test', lw=2, ax=ax)
+plt.plot(forecast_values.values(),label='Forecast', lw=2, ax=ax)
 plt.xlabel('Date')
 plt.title('EUR/USD Close Price Forecast using Theta')
 
