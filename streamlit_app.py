@@ -73,13 +73,9 @@ st.markdown(f"<p style='color: white; font-size: 18px;'>RMSE: {rmse_theta:.5f}</
 
 
 
-
-
-
-@st.cache
 def get_plotly_data():
 
-    z_data = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv')
+    z_data = pd.read_csv('eurusd_24h.csv')
     z = z_data.values
     sh_0, sh_1 = z.shape
     x, y = np.linspace(0, 1, sh_0), np.linspace(0, 1, sh_1)
