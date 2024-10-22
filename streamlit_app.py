@@ -29,7 +29,7 @@ df['close'] = df['close'].interpolate()
 full_date_range = pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='D')
 # full_date_range = pd.date_range(start=df.index.min(), end=df.index.max(), freq='D')
 df.set_index('Date_date', inplace=True, drop=False)
-df_full = df.reindex(full_date_range)
+df_full = df[['open', 'high', 'low', 'close', 'vol']].reindex(full_date_range)
 df_full['close'] = df_full['close'].fillna(method='ffill')
 y_full = df_full['close'] #.fillna(method='ffill')
 
