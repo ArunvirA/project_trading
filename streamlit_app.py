@@ -76,33 +76,19 @@ st.markdown(f"<p style='color: white; font-size: 18px;'>RMSE: {rmse_theta:.5f}</
 
 
 
-fig = go.Figure()
+z_data = pd.read_csv('eurusd_24h.csv')
+z = z_data.values
+sh_0, sh_1 = z.shape
+x, y = np.linspace(0, 1, sh_0), np.linspace(0, 1, sh_1)
+return x, y, z
 
-fig.add_trace(go.Scatter(
-x=train_ts.time_index,
-y=train_ts.values(),
-mode='lines',
-name='Train',
-line=dict(color='blue', width=2),))
+import plotly.graph_objects as go
 
-fig.update_layout(
-title='EUR/USD Close Price Forecast using Theta Model',
-xaxis_title='Date',
-yaxis_title='Price',
-legend=dict(x=0, y=1),
-template='plotly_dark',
-hovermode='x unified',
-margin=dict(l=0, r=0, t=50, b=50))
+x, y, z = get_plotly_data()
 
-fig.update_xaxes(
-tickformat="%Y",
-tickvals=pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='Y'),
-range=[df['Date_date'].min(), df['Date_date'].max()])
-
-fig.update_xaxes(
-dtick="M12", )
-
-st.plotly_chart(fig)
+fig = go.Figure(data=[go.Surface(z=z, x=x, y=y)])
+fig.update_layout(title='IRR', autosize=False, width=800, height=800, margin=dict(l=40, r=40, b=40, t=40))
+go.plotly_chart(fig)
 
 
 
