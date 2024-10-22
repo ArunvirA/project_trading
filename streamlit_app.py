@@ -27,12 +27,13 @@ y_full['close'] = y_full['close'].fillna(method='ffill')
 y_ts = TimeSeries.from_series(y_full['close'], fill_missing_dates=True, freq="D")
 train_ts, test_ts = y_ts[:int(len(y_ts)*0.8)], y_ts[int(len(y_ts)*0.8):]
 
+st.write(train_ts)
+st.write(test_ts)
+
 theta = Theta()
 theta.fit(train_ts)
 forecast_values = theta.predict(len(test_ts))
 
-st.write(train_ts)
-st.write(test_ts)
 st.write(forecast_values)
 
 st.subheader("Plotting forecast results")
