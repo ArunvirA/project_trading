@@ -31,6 +31,10 @@ theta = Theta()
 theta.fit(train_ts)
 forecast_values = theta.predict(len(test_ts))
 
+st.write(train_ts)
+st.write(test_ts)
+st.write(forecast_values)
+
 st.subheader("Plotting forecast results")
 fig, ax = plt.subplots(figsize=(12, 6))
 ax.plot(train_ts.values(),label='Train', lw=2)
