@@ -17,7 +17,7 @@ st.dataframe(df.head())
 #       df.set_index('Date_date', inplace=True)
 
 df = df.sort_values(by='Date_date', ascending=True)
-# df.set_index(inplace=True, drop=False)
+df.set_index('Date_date', inplace=True, drop=False)
 df = df[['Date_date', 'open', 'high', 'low', 'close', 'vol']]
 
 df['close'] = df['close'].interpolate()
