@@ -11,12 +11,12 @@ st.markdown("""This app forecasts EUR/USD close prices using machine learning sp
 df = pd.read_csv('eurusd_24h.csv')
 st.dataframe(df.head())
 
-df['Date_date'] = pd.to_datetime(df['Date_date'])
-df = df.sort_values(by='Date_date', ascending=True)
-df.set_index('Date_date', inplace=True)
-
+# df['Date_date'] = pd.to_datetime(df['Date_date'])
 # df = df.sort_values(by='Date_date', ascending=True)
-# df.set_index('Date_date', inplace=True, drop=False)
+# df.set_index('Date_date', inplace=True)
+
+df = df.sort_values(by='Date_date', ascending=True)
+df.set_index('Date_date', inplace=True, drop=False)
 df = df[['Date_date', 'open', 'high', 'low', 'close', 'vol']]
 
 df['close'] = df['close'].interpolate()
