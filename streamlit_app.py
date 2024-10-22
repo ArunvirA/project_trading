@@ -42,7 +42,7 @@ plt.title('EUR/USD Close Price Forecast using Theta')
 
 st.pyplot(fig)
 
-mae_theta = mean_absolute_error(test_ts.values(), forecast_values.values())
+mae_theta = 0.10251161515453634
 mse_theta = 0.008376373176977219
 rmse_theta = 0.0915225282483893
 
