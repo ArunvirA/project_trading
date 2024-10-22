@@ -84,7 +84,7 @@ def get_plotly_data():
 x, y, z = get_plotly_data()
 
 fig = go.Figure(data=[go.Surface(z=z, x=x, y=y)])
-fig.update_layout(title='IRR', autosize=False, width=800, height=800, margin=dict(l=40, r=40, b=40, t=40))
+fig.update_layout(title='EUR/USD predictions', autosize=False, width=800, height=800, margin=dict(l=40, r=40, b=40, t=40))
 st.plotly_chart(fig)
 
 if st.button('More 🎈🎈🎈 please!'):
