@@ -79,7 +79,7 @@ st.markdown(f"<p style='color: white; font-size: 18px;'>RMSE: {rmse_theta:.5f}</
 fig = go.Figure()
 
 fig.add_trace(go.Scatter(
-x=Date_date,
+x=train_ts.time_index,
 y=train_ts.values(),
 mode='lines',
 name='Train',
@@ -93,6 +93,18 @@ legend=dict(x=0, y=1),
 template='plotly_dark',
 hovermode='x unified',
 margin=dict(l=0, r=0, t=50, b=50))
+
+fig.update_xaxes(
+tickformat="%Y",  # Set the tick format to show years
+tickvals=pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='Y'),  # Set tick values to be yearly
+title_standoff=15,  # Adjust spacing for x-axis title
+range=[df['Date_date'].min(), df['Date_date'].max()]  # Set the range for the x-axis to the entire dataset
+)
+
+# Ensure the x-axis is displayed as a range of years
+fig.update_xaxes(
+dtick="M12",  # Set tick to show every 12 months (1 year)
+)
 
 st.plotly_chart(fig)
 
