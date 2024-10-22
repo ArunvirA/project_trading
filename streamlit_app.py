@@ -25,7 +25,7 @@ df['close'] = df['close'].interpolate()
 # train, test = y[:int(len(y)*0.8)], y[int(len(y)*0.8):]
 
 # y2 = y
-# full_date_range = pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='D')
+full_date_range = pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='D')
 full_date_range = pd.date_range(start=df.index.min(), end=df.index.max(), freq='D')
 df_full = df.reindex(full_date_range)
 df_full['close'] = df_full['close'].fillna(method='ffill')
