@@ -73,17 +73,20 @@ st.markdown(f"<p style='color: white; font-size: 18px;'>RMSE: {rmse_theta:.5f}</
 
 
 
-def get_plotly_data():
+# def get_plotly_data():
 
-    z_data = pd.read_csv('eurusd_24h.csv')
-    z = z_data.values
-    sh_0, sh_1 = z.shape
-    x, y = np.linspace(0, 1, sh_0), np.linspace(0, 1, sh_1)
-    return x, y, z
+#     z_data = pd.read_csv('eurusd_24h.csv')
+#     z = z_data.values
+#     sh_0, sh_1 = z.shape
+#     x, y = np.linspace(0, 1, sh_0), np.linspace(0, 1, sh_1)
+#     return x, y, z
 
-x, y, z = get_plotly_data()
+# x, y, z = get_plotly_data()
+train_line = go.line(x=train_ts.values(),full_date_range[:len(train_ts.values()))
+test_line = go.line(x=test_ts.values(),full_date_range[-len(test_ts.values()))
+forecast_line = go.line(x=forecast_values.values(),full_date_range[-len(test_ts.values()))
 
-fig = go.Figure(data=[go.Surface(z=z, x=x, y=y)])
+fig = go.Figure(data=[train_line,test_line,forecast_line])
 fig.update_layout(title='EUR/USD predictions', autosize=False, width=800, height=800, margin=dict(l=40, r=40, b=40, t=40))
 st.plotly_chart(fig)
 
