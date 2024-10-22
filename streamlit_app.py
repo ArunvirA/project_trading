@@ -11,21 +11,21 @@ st.markdown("""This app forecasts EUR/USD close prices using machine learning sp
 df = pd.read_csv('eurusd_24h.csv')
 st.dataframe(df.head())
 
-df = df.sort_values(by='Date_date', ascending=True)
-df.reset_index(inplace=True)
-df['Date_date'] = pd.to_datetime(df['Date_date'])
-df.set_index('Date_date', inplace=True)
-
 # df = df.sort_values(by='Date_date', ascending=True)
-# df.set_index('Date_date', inplace=True, drop=False)
-# df = df[['Date_date', 'open', 'high', 'low', 'close', 'vol']]
+# df.reset_index(inplace=True)
+# df['Date_date'] = pd.to_datetime(df['Date_date'])
+# df.set_index('Date_date', inplace=True)
+
+df = df.sort_values(by='Date_date', ascending=True)
+df.set_index('Date_date', inplace=True, drop=False)
+df = df[['Date_date', 'open', 'high', 'low', 'close', 'vol']]
 
 df['close'] = df['close'].interpolate()
 
 # train, test = y[:int(len(y)*0.8)], y[int(len(y)*0.8):]
 
 # y2 = y
-full_date_range = pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='D')
+# full_date_range = pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='D')
 full_date_range = pd.date_range(start=df.index.min(), end=df.index.max(), freq='D')
 df_full = df.reindex(full_date_range)
 df_full['close'] = df_full['close'].fillna(method='ffill')
