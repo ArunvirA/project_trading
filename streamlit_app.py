@@ -15,6 +15,8 @@ df = df.sort_values(by='Date_date', ascending=True)
 df.reset_index(inplace=True, drop=True)
 df = df[['Date_date', 'open', 'high', 'low', 'close', 'vol']]
 
+y = df['close'].interpolate()
+
 train, test = y[:int(len(y)*0.8)], y[int(len(y)*0.8):]
 
 full_date_range = pd.date_range(start=df['Date_date'].min(), end=df['Date_date'].max(), freq='D')
