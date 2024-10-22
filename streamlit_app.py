@@ -39,8 +39,8 @@ df_full.rename(columns={'index': 'Date_date'}, inplace=True)
 y_ts = TimeSeries.from_series(y_full, fill_missing_dates=True, freq="D")
 train_ts, test_ts = y_ts[:int(len(y_ts)*0.8)], y_ts[int(len(y_ts)*0.8):]
 
-st.write(df.reindex(full_date_range))
 st.write(df)
+st.write(df_full)
 st.write(y_ts)
 st.write(y_full)
 
