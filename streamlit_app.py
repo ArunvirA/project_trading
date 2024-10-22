@@ -79,6 +79,16 @@ y=train_ts.values(),
 mode='lines',
 name='Train',
 line=dict(color='blue', width=2),))
+
+fig.update_layout(
+title='EUR/USD Close Price Forecast using Theta Model',
+xaxis_title='Date',
+yaxis_title='Price',
+legend=dict(x=0, y=1),
+template='plotly_dark',
+hovermode='x unified',
+margin=dict(l=0, r=0, t=50, b=50))
+
 st.plotly_chart(fig)
 
 
