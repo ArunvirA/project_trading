@@ -80,7 +80,7 @@ z_data = pd.read_csv('eurusd_24h.csv')
 z = z_data.values
 sh_0, sh_1 = z.shape
 x, y = np.linspace(0, 1, sh_0), np.linspace(0, 1, sh_1)
-return x, y, z
+  return x, y, z
 
 import plotly.graph_objects as go
 
