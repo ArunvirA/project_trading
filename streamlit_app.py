@@ -150,7 +150,11 @@ trend_line = slope * x_values + intercept
 
 # Update layout
 fig.update_layout(
-    title="EUR/USD Close Price Forecasting",
+    title=dict(
+        text="EUR/USD Price Forecasting",
+        x=0.5,
+        xanchor='center', 
+    ),
     template="plotly_dark",
     xaxis_tickformat='%b %Y',
     xaxis_title=dict(text="Date", font=dict(size=16, color='white')),
