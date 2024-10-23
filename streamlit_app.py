@@ -173,7 +173,7 @@ fig.add_annotation(
 )
 
 # Display the figure in Streamlit
-st.plotly_chart(fig)
+st.plotly_chart(fig, use_container_width=True)
 
 
 
