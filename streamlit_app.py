@@ -33,9 +33,11 @@ def set_png_as_page_bg(png_file):
 set_png_as_page_bg('back2.png')
 
 st.title('EUR/USD Close Price Forecast using Theta Model')
-st.subheader("""Hypothesis:<br>
-The Theta model can effectively forecast future EUR/USD close prices, with predictions closely matching actual market trends.<br>
-Visualising these forecasts with Plotly will highlight the model's accuracy in capturing key price movements.""", unsafe_allow_html=True)
+st.markdown("""
+    <h3>Hypothesis:</h3>
+    <p>The Theta model can effectively forecast future EUR/USD close prices, with predictions closely matching actual market trends.</p>
+    <p>Visualising these forecasts with Plotly will highlight the model's accuracy in capturing key price movements.</p>
+""", unsafe_allow_html=True)
 
 df = pd.read_csv('eurusd_24h.csv')
 df_show = df.copy()
