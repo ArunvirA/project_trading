@@ -30,7 +30,7 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
 
-set_png_as_page_bg('background.png')
+set_png_as_page_bg('back2.png')
 
 st.title('EUR/USD Close Price Forecast using Theta Model')
 st.markdown("""Hypothesis:<br>
