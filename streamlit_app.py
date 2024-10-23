@@ -121,7 +121,7 @@ trend_line = slope * x_values + intercept
 
 # Update layout
 fig.update_layout(
-    title="EUR/USD Close Price Forecasting Using Theta Modelling",
+    title="EUR/USD Close Price Forecasting",
     template="plotly_dark",
     xaxis_tickformat='%b %Y',
     xaxis_title=dict(text="Date", font=dict(size=16, color='white')),
