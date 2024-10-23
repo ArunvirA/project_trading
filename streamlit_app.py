@@ -129,16 +129,6 @@ x_values = np.arange(len(train_ts.values().flatten()))
 slope, intercept = np.polyfit(x_values, train_ts.values().flatten(), 1)
 trend_line = slope * x_values + intercept
 
-# Add Trend Line
-fig.add_trace(go.Scatter(
-    x=train_ts.time_index,
-    y=trend_line,
-    mode='lines',
-    name='Trend Line',
-    line=dict(width=1, dash='dash'),
-    hoverinfo='none'
-))
-
 # Update layout
 fig.update_layout(
     title="EUR/USD Close Price Forecasting Using Theta Modelling",
