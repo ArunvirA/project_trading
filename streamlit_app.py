@@ -178,6 +178,10 @@ st.markdown(f"- **Mean Squared Error (MSE):**  \n"
 st.markdown(f"- **Root Mean Squared Error (RMSE):**  \n"
             "This means that, on average, the predictions are off by about **0.0915 units**, indicating a good level of accuracy in the model.")
 
+st.subheader("Model Limitations")
+
+st.subheader("Summary")
+
 
 if st.button(' 🎈🎈🎈 !!!'):
     st.balloons()
