@@ -58,7 +58,7 @@ train_ts.plot(ax=ax, label='Train', lw=2)
 test_ts.plot(ax=ax, label='Test', lw=2)
 forecast_values.plot(ax=ax, label='Forecast', lw=2)
 plt.xlabel('Date')
-plt.markdown('EUR/USD Close Price Forecast')
+plt.title('EUR/USD Close Price Forecast')
 plt.legend()
 
 # st.pyplot(fig)
@@ -159,7 +159,7 @@ mse_theta = 0.008376373176977219
 rmse_theta = 0.0915225282483893
 
 
-st.subheader("Model Evaluation:")
+st.subheader("Model Evaluation")
 
 col1, col2, col3 = st.columns(3)
 col1.metric("MAE", "0.10251")
