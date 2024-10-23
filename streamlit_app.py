@@ -165,9 +165,9 @@ fig.update_layout(
 st.markdown("""
     <style>
     .plot-container {
-        border-radius: 20px;  /* Adjust the corner rounding here */
+        border-radius: 20px; 
         overflow: hidden;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);  /* Optional: Adds a shadow for better visibility */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
     }
     </style>
 """, unsafe_allow_html=True)
