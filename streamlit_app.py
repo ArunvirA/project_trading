@@ -8,7 +8,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 st.title('EUR/USD Close Price Forecast using Theta Model')
-st.markdown("""This app forecasts EUR/USD close prices using machine learning specifically the Theta model.""")
+st.markdown("""Hypothesis: """)
 
 df = pd.read_csv('eurusd_24h.csv')
 st.dataframe(df.head())
