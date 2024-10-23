@@ -149,11 +149,6 @@ fig.add_annotation(
     borderwidth=2,
     arrowcolor="red")
 
-fig.update_layout(
-    width=2000,  # Width in pixels
-    height=600   # Height in pixels
-)
-
 # Display the figure in Streamlit
 st.plotly_chart(fig, use_container_width=True)
 
