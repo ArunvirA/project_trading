@@ -153,7 +153,9 @@ fig.update_layout(
     title=dict(
         text="EUR/USD Price Forecasting",
         x=0.5,
-        xanchor='center', 
+        xanchor='center',
+        font=dict(
+            size=24 
     ),
     template="plotly_dark",
     xaxis_tickformat='%b %Y',
