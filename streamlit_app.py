@@ -97,43 +97,6 @@ col3.metric("RMSE", "0.09152")
 if st.button('More 🎈🎈🎈 please!'):
     st.balloons()
 
-forecast_index = pd.date_range(start=test_ts.index[-1] + pd.Timedelta(days=1), periods=forecast_length)
-forecast_values = pd.Series(forecast_values, index=forecast_index)
-
-# Streamlit app title
-st.title("EUR/USD Price Forecast and Surface Plot")
-
-# Generate surface plot data
-x, y, z = get_plotly_data()
-
-# Create a Plotly surface figure
-fig_surface = go.Figure(data=[go.Surface(z=z, x=x, y=y)])
-
-# Update the layout of the surface figure
-fig_surface.update_layout(title='EUR/USD Surface Plot', autosize=False, width=800, height=800,
-                          margin=dict(l=40, r=40, b=40, t=40))
-
-# Display the surface plot in the Streamlit app
-st.plotly_chart(fig_surface)
-
-# Plotting the forecast results
-st.subheader("Forecasted EUR/USD Prices")
-fig_forecast = go.Figure()
-
-# Add traces for train, test, and forecast
-fig_forecast.add_trace(go.Scatter(x=train_ts.index, y=train_ts, mode='lines', name='Train', line=dict(width=2)))
-fig_forecast.add_trace(go.Scatter(x=test_ts.index, y=test_ts, mode='lines', name='Test', line=dict(width=2)))
-fig_forecast.add_trace(go.Scatter(x=forecast_values.index, y=forecast_values, mode='lines', name='Forecast', line=dict(width=2, dash='dash')))
-
-# Update layout for the forecast plot
-fig_forecast.update_layout(title="EUR/USD Price Forecast Using Theta",
-                            xaxis_title="Date",
-                            yaxis_title="Close Price",
-                            legend=dict(x=0, y=1))
-
-# Display the forecast plot in the Streamlit app
-st.plotly_chart(fig_forecast)
-
 
 
 
