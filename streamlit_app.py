@@ -13,6 +13,21 @@ st.markdown("""This app forecasts EUR/USD close prices using machine learning sp
 df = pd.read_csv('eurusd_24h.csv')
 st.dataframe(df.head())
 
+def get_slider_data():
+
+    return pd.DataFrame({
+          'first column': list(range(1, 11)),
+          'second column': np.arange(10, 101, 10)
+        })
+
+df = get_slider_data()
+
+option = st.slider('Select a modulus', 1, 10, 3)
+
+filtered_df = df[df['first column'] % option == 0]
+
+st.write(filtered_df)
+
 df = df.sort_values(by='Date_date', ascending=True)
 # df.set_index('Date_date', inplace=True, drop=False)
 df = df[['Date_date', 'open', 'high', 'low', 'close', 'vol']]
@@ -97,8 +112,6 @@ col3.metric("RMSE", "0.09152")
 if st.button('More 🎈🎈🎈 please!'):
     st.balloons()
 
-if st.button('More money 💵 please!'):
-    st.session_state['money'] += 100 
 
 
 
