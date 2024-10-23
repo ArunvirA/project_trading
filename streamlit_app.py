@@ -8,7 +8,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 st.title('EUR/USD Close Price Forecast using Theta Model')
-st.markdown("""Hypothesis: \nThe Theta model can effectively forecast future EUR/USD close prices, with predictions closely matching actual market trends. Visualizing these forecasts with Plotly will highlight the model's accuracy in capturing key price movements.""")
+st.markdown("""Hypothesis:
+The Theta model can effectively forecast future EUR/USD close prices, with predictions closely matching actual market trends. Visualizing these forecasts with Plotly will highlight the model's accuracy in capturing key price movements.""")
 
 df = pd.read_csv('eurusd_24h.csv')
 st.dataframe(df.head())
