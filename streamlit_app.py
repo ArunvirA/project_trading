@@ -97,7 +97,7 @@ col3.metric("RMSE", "0.09152")
 if st.button('More 🎈🎈🎈 please!'):
     st.balloons()
 
-df_full['date_date'] = df_full['date_date'].dt.tz_localize('UTC', ambiguous='infer')  # or remove timezone
+df_full['Date_date'] = df_full['Date_date'].dt.tz_localize('UTC', ambiguous='infer')  # or remove timezone
 fig = go.Figure()
 
 # Add traces
