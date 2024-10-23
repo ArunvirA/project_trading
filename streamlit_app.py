@@ -19,19 +19,13 @@ def set_background(image_file):
         }}
         </style>
         """,
-        unsafe_allow_html=True
-    )
-
-# Load your image as base64
+        unsafe_allow_html=True)
 def load_image(image_path):
     with open(image_path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# Path to your background image
-image_path = "background.png"  # This is your image file name
+image_path = "background.png" 
 background_image = load_image(image_path)
-
-# Apply the background image
 set_background(background_image)
 
 st.title('EUR/USD Close Price Forecast using Theta Model')
