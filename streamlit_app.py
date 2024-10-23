@@ -155,8 +155,8 @@ fig.update_layout(
         x=0.5,
         xanchor='center',
         font=dict(
-            size=24 
-    ),)
+            size=24
+        )
     template="plotly_dark",
     xaxis_tickformat='%b %Y',
     xaxis_title=dict(text="Date", font=dict(size=16, color='white')),
