@@ -125,7 +125,9 @@ fig.update_layout(
     template="plotly_dark",
     xaxis_tickformat='%b %Y',
     xaxis_title=dict(text="Date", font=dict(size=16, color='white')),
-    yaxis_title=dict(text="Close Price", font=dict(size=16, color='white'))
+    yaxis_title=dict(text="Close Price", font=dict(size=16, color='white')),
+    width=800,
+    height=600
 )
 
 # Add a vertical line and annotation
