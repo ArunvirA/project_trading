@@ -94,6 +94,89 @@ col3.metric("RMSE", "0.09152")
 # fig.update_layout(title='EUR/USD predictions', autosize=False, width=800, height=800, margin=dict(l=40, r=40, b=40, t=40))
 # st.plotly_chart(fig)
 
+
+fig = go.Figure()
+
+# Add Train time series
+fig.add_trace(go.Scatter(
+    x=train_ts.time_index,
+    y=train_ts.values().flatten(),
+    mode='lines',
+    name='Train',
+    line=dict(width=2)
+))
+
+# Add Test time series
+fig.add_trace(go.Scatter(
+    x=test_ts.time_index,
+    y=test_ts.values().flatten(),
+    mode='lines',
+    name='Test',
+    line=dict(width=2)
+))
+
+# Add Forecast time series
+fig.add_trace(go.Scatter(
+    x=forecast_values.time_index,
+    y=forecast_values.values().flatten(),
+    mode='lines',
+    name='Forecast',
+    line=dict(width=2)
+))
+
+# Create trend line data
+x_values = np.arange(len(train_ts.values().flatten()))
+slope, intercept = np.polyfit(x_values, train_ts.values().flatten(), 1)
+trend_line = slope * x_values + intercept
+
+# Add Trend Line
+fig.add_trace(go.Scatter(
+    x=train_ts.time_index,
+    y=trend_line,
+    mode='lines',
+    name='Trend Line',
+    line=dict(width=1, dash='dash'),
+    hoverinfo='none'
+))
+
+# Update layout
+fig.update_layout(
+    title="EUR/USD Close Price Forecasting Using Theta Modelling",
+    template="plotly_dark",
+    xaxis_tickformat='%b %Y',
+    xaxis_title=dict(text="Date", font=dict(size=16, color='white')),
+    yaxis_title=dict(text="Close Price", font=dict(size=16, color='white'))
+)
+
+# Add a vertical line and annotation
+fig.add_shape(
+    type="line",
+    x0="2022-10-01", x1="2022-10-01",
+    y0=1.0, y1=1.5,
+    line=dict(color="White", width=2, dash="dashdot"),
+    xref='x', yref='y'
+)
+
+fig.add_annotation(
+    x="2022-10-01",
+    y=1.5,
+    text="Important Event?",
+    showarrow=True,
+    arrowhead=2,
+    ax=60,
+    ay=-60,
+    font=dict(color="white", size=12),
+    bgcolor="rgba(0,0,0,0.7)",
+    bordercolor="Red",
+    borderwidth=2,
+    arrowcolor="red"
+)
+
+# Display the figure in Streamlit
+st.plotly_chart(fig)
+
+
+
 if st.button('More 🎈🎈🎈 please!'):
     st.balloons()
 
