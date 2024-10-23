@@ -162,6 +162,20 @@ fig.update_layout(
     width=800,
     height=600
 )
+st.markdown("""
+    <style>
+    .plot-container {
+        border-radius: 20px;  /* Adjust the corner rounding here */
+        overflow: hidden;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);  /* Optional: Adds a shadow for better visibility */
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Wrap Plotly chart inside the styled div for rounded corners
+st.markdown('<div class="plot-container">', unsafe_allow_html=True)
+st.plotly_chart(fig, use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)
 
 # Add a vertical line and annotation
 fig.add_shape(
