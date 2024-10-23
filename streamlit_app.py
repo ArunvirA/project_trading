@@ -97,7 +97,21 @@ col3.metric("RMSE", "0.09152")
 if st.button('More 🎈🎈🎈 please!'):
     st.balloons()
 
+fig = go.Figure()
 
+# Add traces
+fig.add_trace(go.Scatter(x=train_ts.index, y=train_ts, mode='lines', name='Train', line=dict(width=2)))
+fig.add_trace(go.Scatter(x=test_ts.index, y=test_ts, mode='lines', name='Test', line=dict(width=2)))
+fig.add_trace(go.Scatter(x=forecast_values.index, y=forecast_values, mode='lines', name='Forecast', line=dict(width=2, dash='dash')))
+
+# Update layout
+fig.update_layout(title="EUR/USD Close Price Forecast using Theta",
+                  xaxis_title="Date",
+                  yaxis_title="Close Price",
+                  legend=dict(x=0, y=1))
+
+# Show the figure in Streamlit
+st.plotly_chart(fig)
 
 
 
