@@ -34,7 +34,7 @@ set_png_as_page_bg('back2.png')
 
 st.title('EUR/USD Close Price Forecast using Theta Model')
 st.markdown("""
-    <h3>Hypothesis:</h3>
+    <h3>Hypothesis</h3>
     <p>The Theta model can effectively forecast future EUR/USD close prices, with predictions closely matching actual market trends.</p>
     <p>Visualising these forecasts with Plotly will highlight the model's accuracy in capturing key price movements.</p>
 """, unsafe_allow_html=True)
