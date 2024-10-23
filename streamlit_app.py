@@ -52,13 +52,13 @@ forecast_values = theta.predict(len(test_ts))
 
 # st.write(forecast_values)
 
-st.subheader("Plotting Forecast Results")
+st.subheader("Theta Predictive Model")
 fig, ax = plt.subplots(figsize=(12, 6))
 train_ts.plot(ax=ax, label='Train', lw=2)
 test_ts.plot(ax=ax, label='Test', lw=2)
 forecast_values.plot(ax=ax, label='Forecast', lw=2)
 plt.xlabel('Date')
-plt.title('EUR/USD Close Price Forecast using Theta')
+plt.title('EUR/USD Close Price Forecast')
 plt.legend()
 
 # st.pyplot(fig)
