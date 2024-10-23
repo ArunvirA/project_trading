@@ -61,18 +61,6 @@ plt.legend()
 
 st.pyplot(fig)
 
-mae_theta = 0.10251161515453634
-mse_theta = 0.008376373176977219
-rmse_theta = 0.0915225282483893
-
-
-st.subheader("Model Evaluation:")
-
-col1, col2, col3 = st.columns(3)
-col1.metric("MAE", "0.10251")
-col2.metric("MSE", "0.00837")
-col3.metric("RMSE", "0.09152")
-
 
 # def get_plotly_data():
 
@@ -164,6 +152,18 @@ fig.add_annotation(
 
 # Display the figure in Streamlit
 st.plotly_chart(fig, use_container_width=True)
+
+mae_theta = 0.10251161515453634
+mse_theta = 0.008376373176977219
+rmse_theta = 0.0915225282483893
+
+
+st.subheader("Model Evaluation:")
+
+col1, col2, col3 = st.columns(3)
+col1.metric("MAE", "0.10251")
+col2.metric("MSE", "0.00837")
+col3.metric("RMSE", "0.09152")
 
 
 
