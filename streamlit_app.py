@@ -169,6 +169,14 @@ col1.metric("MAE", "0.10251")
 col2.metric("MSE", "0.00837")
 col3.metric("RMSE", "0.09152")
 
+st.markdown(f"- **Mean Absolute Error (MAE):**  \n"
+            "This indicates that, on average, the model's predictions deviate from the actual close prices by approximately **0.10 units**.")
+
+st.markdown(f"- **Mean Squared Error (MSE):**  \n"
+            "This value reflects the average of the squared errors, showing that the model's errors are generally small and not significantly large.")
+
+st.markdown(f"- **Root Mean Squared Error (RMSE):**  \n"
+            "This means that, on average, the predictions are off by about **0.0915 units**, indicating a good level of accuracy in the model.")
 
 
 if st.button(' 🎈🎈🎈 !!!'):
