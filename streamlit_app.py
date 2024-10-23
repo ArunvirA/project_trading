@@ -192,10 +192,9 @@ rmse_theta = 0.0915225282483893
 
 st.subheader("Model Performance Metrics")
 
-col1, col2, col3 = st.columns(3)
-col1.metric("MAE", "0.10251")
-col2.metric("MSE", "0.00837")
-col3.metric("RMSE", "0.09152")
+col1.markdown(f"<h2 style='text-align: center;'>MAE</h2><h3 style='text-align: center;'>{mae_theta:.5f}</h3>", unsafe_allow_html=True)
+col2.markdown(f"<h2 style='text-align: center;'>MSE</h2><h3 style='text-align: center;'>{mse_theta:.5f}</h3>", unsafe_allow_html=True)
+col3.markdown(f"<h2 style='text-align: center;'>RMSE</h2><h3 style='text-align: center;'>{rmse_theta:.5f}</h3>", unsafe_allow_html=True)
 
 st.markdown(f"- **Mean Absolute Error (MAE):**  \n"
             "This indicates that, on average, the model's predictions deviate from the actual close prices by approximately **0.10 units**.")
