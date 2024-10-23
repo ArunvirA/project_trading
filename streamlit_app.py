@@ -39,8 +39,8 @@ Visualising these forecasts with Plotly will highlight the model's accuracy in c
 
 df = pd.read_csv('eurusd_24h.csv')
 df_show = df.copy()
-df_show['Date_date'] = pd.to_datetime(df_show['Date_date'])
-df_show['Date_date'] = df_show['Date_date'].date()
+df_show['Date_date'] = pd.to_datetime(df_show['Date_date']).date()
+# df_show['Date_date'] = df_show['Date_date'].date()
 st.dataframe(df_show.head())
 
 df = df.sort_values(by='Date_date', ascending=True)
