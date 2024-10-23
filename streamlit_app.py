@@ -98,10 +98,6 @@ if st.button('More 🎈🎈🎈 please!'):
     st.balloons()
 
 
-
-
-forecast_values = pd.Series(forecast_values, index=pd.date_range(start=test_ts.index[-1] + pd.Timedelta(days=1), periods=len(forecast_values)))
-
 # Plotting with Plotly
 st.subheader("Plotting Forecast Results")
 fig = go.Figure()
