@@ -58,7 +58,7 @@ train_ts.plot(ax=ax, label='Train', lw=2)
 test_ts.plot(ax=ax, label='Test', lw=2)
 forecast_values.plot(ax=ax, label='Forecast', lw=2)
 plt.xlabel('Date')
-plt.title('EUR/USD Close Price Forecast')
+plt.markdown('EUR/USD Close Price Forecast')
 plt.legend()
 
 # st.pyplot(fig)
