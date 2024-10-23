@@ -147,7 +147,11 @@ fig.add_annotation(
     bgcolor="rgba(0,0,0,0.7)",
     bordercolor="Red",
     borderwidth=2,
-    arrowcolor="red"
+    arrowcolor="red")
+
+fig.update_layout(
+    width=1200,  # Width in pixels
+    height=600   # Height in pixels
 )
 
 # Display the figure in Streamlit
