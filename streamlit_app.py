@@ -98,7 +98,7 @@ if st.button('More 🎈🎈🎈 please!'):
     st.balloons()
 
 if st.button('More  💵 💵 💵 please!'):
-    st.balloons()
+    st.money()
 
 
 
