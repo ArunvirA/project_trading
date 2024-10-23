@@ -38,7 +38,7 @@ The Theta model can effectively forecast future EUR/USD close prices, with predi
 Visualising these forecasts with Plotly will highlight the model's accuracy in capturing key price movements.""", unsafe_allow_html=True)
 
 df = pd.read_csv('eurusd_24h.csv')
-df['Date_date'] = df['Date_date'].dt.tz_localize(None)
+# df['Date_date'] = df['Date_date'].dt.tz_localize(None)
 st.dataframe(df.head())
 
 df = df.sort_values(by='Date_date', ascending=True)
