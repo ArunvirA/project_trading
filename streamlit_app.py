@@ -28,7 +28,7 @@ def load_image(image_path):
         return base64.b64encode(f.read()).decode()
 
 # Path to your background image
-image_path = "background.png"  # Change this to your image file path
+image_path = "background.png"  # This is your image file name
 background_image = load_image(image_path)
 
 # Apply the background image
