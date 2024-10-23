@@ -174,7 +174,6 @@ st.markdown("""
 
 # Wrap Plotly chart inside the styled div for rounded corners
 st.markdown('<div class="plot-container">', unsafe_allow_html=True)
-st.plotly_chart(fig, use_container_width=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
 # Add a vertical line and annotation
