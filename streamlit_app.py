@@ -9,30 +9,24 @@ import plotly.graph_objects as go
 import base64
 st.set_page_config(layout='wide')
 
-def set_background(image_file):
-    st.markdown(
-        f"""
+def set_png_as_page_bg(png_file):
+    bin_str = get_base64_of_bin_file(png_file)
+    page_bg_img = '''
         <style>
-        .reportview-container {{
-            background: url(data:image/png;base64,{image_file}) no-repeat center center fixed; 
-            background-size: cover;
-        }}
+        .stApp {
+            background-image: url("data:image/png;base64,%s");
+            background-size:  cover;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            background-position: center
+        }
         </style>
-        """,
-        unsafe_allow_html=True
-    )
+    ''' % bin_str
+    
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+    return
 
-# Load your image as base64
-def load_image(image_path):
-    with open(image_path, "rb") as f:
-        return base64.b64encode(f.read()).decode()
-
-# Path to your background image
-image_path = "background.png"  # This is your image file name
-background_image = load_image(image_path)
-
-# Apply the background image
-set_background(background_image)
+set_png_as_page_bg('background.png')
 
 st.title('EUR/USD Close Price Forecast using Theta Model')
 st.markdown("""Hypothesis:<br>
