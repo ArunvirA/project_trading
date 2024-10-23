@@ -59,7 +59,7 @@ plt.xlabel('Date')
 plt.title('EUR/USD Close Price Forecast using Theta')
 plt.legend()
 
-st.pyplot(fig)
+# st.pyplot(fig)
 
 
 # def get_plotly_data():
