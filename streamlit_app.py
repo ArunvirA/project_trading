@@ -102,23 +102,6 @@ if st.button('More 🎈🎈🎈 please!'):
 
 forecast_values = pd.Series(forecast_values, index=pd.date_range(start=test_ts.index[-1] + pd.Timedelta(days=1), periods=len(forecast_values)))
 
-# Convert train_ts and test_ts to Pandas Series if they aren't already
-if not isinstance(train_ts, pd.Series):
-    train_ts = pd.Series(train_ts)
-
-if not isinstance(test_ts, pd.Series):
-    test_ts = pd.Series(test_ts)
-
-# Ensure train_ts, test_ts, and forecast_values have DatetimeIndex
-if not isinstance(train_ts.index, pd.DatetimeIndex):
-    train_ts.index = pd.date_range(start='your_start_date', periods=len(train_ts), freq='d')
-
-if not isinstance(test_ts.index, pd.DatetimeIndex):
-    test_ts.index = pd.date_range(start='your_test_start_date', periods=len(test_ts), freq='d')
-
-# Make sure your forecast index is correct
-forecast_values.index = pd.date_range(start=test_ts.index[-1] + pd.Timedelta(days=1), periods=len(forecast_values), freq='d')
-
 # Plotting with Plotly
 st.subheader("Plotting Forecast Results")
 fig = go.Figure()
@@ -129,7 +112,7 @@ fig.add_trace(go.Scatter(x=test_ts.index, y=test_ts, mode='lines', name='Test', 
 fig.add_trace(go.Scatter(x=forecast_values.index, y=forecast_values, mode='lines', name='Forecast', line=dict(width=2, dash='dash')))
 
 # Update layout for the plot
-fig.update_layout(title="EUR/USD Close Price Forecast using Theta",
+fig.update_layout(title="EUR/USD Close Price Forecast Using Theta",
                   xaxis_title="Date",
                   yaxis_title="Close Price",
                   legend=dict(x=0, y=1))
