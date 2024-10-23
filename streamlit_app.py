@@ -97,6 +97,23 @@ col3.metric("RMSE", "0.09152")
 if st.button('More 🎈🎈🎈 please!'):
     st.balloons()
 
+
+
+
+if not isinstance(train_ts, pd.Series):
+    train_ts = pd.Series(train_ts)
+if not isinstance(test_ts, pd.Series):
+    test_ts = pd.Series(test_ts)
+if not isinstance(forecast_values, pd.Series):
+    forecast_values = pd.Series(forecast_values)
+
+# Remove timezone awareness if necessary
+train_ts.index = train_ts.index.tz_localize(None)
+test_ts.index = test_ts.index.tz_localize(None)
+forecast_values.index = forecast_values.index.tz_localize(None)
+
+# Plotting with Plotly
+st.subheader("Plotting Forecast Results")
 fig = go.Figure()
 
 # Add traces
