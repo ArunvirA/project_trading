@@ -6,6 +6,7 @@ from darts.models import Theta
 from darts import TimeSeries
 import plotly.express as px
 import plotly.graph_objects as go
+import base64
 st.set_page_config(layout='wide')
 
 st.title('EUR/USD Close Price Forecast using Theta Model')
