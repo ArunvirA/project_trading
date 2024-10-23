@@ -150,7 +150,7 @@ fig.add_annotation(
     arrowcolor="red")
 
 fig.update_layout(
-    width=1200,  # Width in pixels
+    width=2000,  # Width in pixels
     height=600   # Height in pixels
 )
 
