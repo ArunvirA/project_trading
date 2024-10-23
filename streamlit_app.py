@@ -162,7 +162,7 @@ mse_theta = 0.008376373176977219
 rmse_theta = 0.0915225282483893
 
 
-st.subheader("Model Evaluation")
+st.subheader("Model Performance Metrics")
 
 col1, col2, col3 = st.columns(3)
 col1.metric("MAE", "0.10251")
