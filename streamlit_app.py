@@ -97,8 +97,8 @@ col3.metric("RMSE", "0.09152")
 if st.button('More 🎈🎈🎈 please!'):
     st.balloons()
 
-if st.button('More  💵 💵 💵 please!'):
-    st.money()
+if st.button('More money 💵 please!'):
+    st.session_state['money'] += 100 
 
 
 
