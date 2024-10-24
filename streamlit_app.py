@@ -234,10 +234,7 @@ st.subheader("Summary")
 if st.button(' 🎈🎈🎈 !!!'):
     st.balloons()
 
-image_path = "4.png"  # Change this to your image file path
 
-# Display the animated image
-st.image(image_path, use_column_width=True)
 
 
 
