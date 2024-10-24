@@ -244,11 +244,8 @@ st.markdown(f"- **Effectiveness:**  \n"
 
 st.markdown("""
 <ul style='font-size: 30px; list-style-type: disc;'>
-    <li><strong>Limitations:</strong></li>
+    <li><strong>Effectiveness:</strong> Particularly effective in predicting short-term fluctuations in the EUR/USD market.</li>
 </ul>
-<p style='font-size: 30px;'>
-    Accuracy may be reduced during unexpected market events or periods of high volatility.
-</p>
 """, unsafe_allow_html=True)
 
 
