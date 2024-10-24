@@ -242,9 +242,12 @@ st.markdown(f"- **Strategy Alignment:**  \n"
 st.markdown(f"- **Effectiveness:**  \n"
             "Particularly effective in predicting short-term fluctuations in the EUR/USD market.")
 
-st.markdown(f"<span style='font-size: 30px;'>- <strong>Limitations:</strong>  <br>"
-            "Accuracy may be reduced during unexpected market events or periods of high volatility.</span>",
-            unsafe_allow_html=True)
+st.markdown("""
+<ul style='font-size: 20px; list-style-type: disc;'>
+    <li><strong>Limitations:</strong></li>
+    <li>Accuracy may be reduced during unexpected market events or periods of high volatility.</li>
+</ul>
+""", unsafe_allow_html=True)
 
 
 if st.button(' 🎈🎈🎈 !!!'):
