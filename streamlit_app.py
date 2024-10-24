@@ -229,6 +229,13 @@ st.markdown(f"- **Root Mean Squared Error (RMSE):**  \n"
 
 
 st.subheader("Summary")
+st.markdown("""
+- **Time Series Forecasting:** Analyzes historical data patterns to predict future price movements.
+- **Effectiveness:** Particularly effective in predicting short-term fluctuations in the EUR/USD market.
+- **Data-Driven Edge:** Provides a data-driven edge for traders by forecasting potential market changes.
+- **Strategy Alignment:** Helps align trading strategies with anticipated market trends.
+- **Limitations:** Accuracy may be reduced during unexpected market events or periods of high volatility.
+""")
 
 
 if st.button(' 🎈🎈🎈 !!!'):
