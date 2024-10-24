@@ -245,6 +245,10 @@ st.markdown(f"- **Effectiveness:**  \n"
 st.markdown(f"- **Limitations:**  \n"
             "Accuracy may be reduced during unexpected market events or periods of high volatility.")
 
+st.markdown(f"<span style='font-size: 30px;'>- <strong>Limitations:</strong>  <br>"
+            "Accuracy may be reduced during unexpected market events or periods of high volatility.</span>",
+            unsafe_allow_html=True)
+
 
 if st.button(' 🎈🎈🎈 !!!'):
     st.balloons()
