@@ -247,8 +247,11 @@ st.markdown(f"- **Limitations:**  \n"
 
 st.markdown("""
 <ul style='font-size: 20px; list-style-type: disc;'>
-    <li><strong>Limitations:</strong> Accuracy may be reduced during unexpected market events or periods of high volatility.</li>
+    <li><strong>Limitations:</strong></li>
 </ul>
+<p style='font-size: 20px; margin-left: 20px;'>
+    Accuracy may be reduced during unexpected market events or periods of high volatility.
+</p>
 """, unsafe_allow_html=True)
 
 
