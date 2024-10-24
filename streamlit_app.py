@@ -231,16 +231,16 @@ st.markdown(f"- **Root Mean Squared Error (RMSE):**  \n"
 st.subheader("Summary")
 
 st.markdown(f"- **Time Series Forecasting:**  \n"
-            "Analyzes historical data patterns to predict future price movements.")
-
-st.markdown(f"- **Effectiveness:**  \n"
-            "Particularly effective in predicting short-term fluctuations in the EUR/USD market.")
+            "Analyses historical data patterns to predict future price movements.")
 
 st.markdown(f"- **Data-Driven Edge:**  \n"
             "Provides a data-driven edge for traders by forecasting potential market changes.")
 
 st.markdown(f"- **Strategy Alignment:**  \n"
             "Helps align trading strategies with anticipated market trends.")
+
+st.markdown(f"- **Effectiveness:**  \n"
+            "Particularly effective in predicting short-term fluctuations in the EUR/USD market.")
 
 st.markdown(f"- **Limitations:**  \n"
             "Accuracy may be reduced during unexpected market events or periods of high volatility.")
